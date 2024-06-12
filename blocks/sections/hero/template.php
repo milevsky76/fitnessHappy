@@ -540,7 +540,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	</div>
 </section>
 
-<script src="/wp-content/themes/testproject/resources/js/modules/bootstrap.js"></script>
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal-old">
 	<div class="modal-content">

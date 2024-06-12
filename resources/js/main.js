@@ -3,6 +3,7 @@
  */
 import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/collapse";
+import "bootstrap/js/dist/tab";
 import "./modules/hide-preloader";
 import "./modules/horizontal-scroll";
 import hideFocusOnDesktop from "./modules/hide-focus-on-desktop";

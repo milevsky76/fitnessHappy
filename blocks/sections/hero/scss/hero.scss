@@ -5,6 +5,7 @@
 @import "../../../../resources/scss/generic/variables";
 @import "../../../../resources/scss/generic/functions";
 @import "../../../../resources/scss/generic/mixins";
+@import "../../../../resources/scss/generic/swiper-bundle";
 
 /* ------------------------------------------------------------ *\
 	Blocks: Section Hero
@@ -894,4 +895,708 @@
 	.nav-item:last-child {
 		margin-right: auto;
 	}
+}
+
+/* ------------------------------------------------------------ *\
+	Blocks: trainer-review
+\* ------------------------------------------------------------ */
+
+.trainer-review {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 50%;
+		height: 100%;
+		background-color: $primary-300;
+
+		@include breakpoint-down(desktop) {
+			display: none;
+		}
+	}
+}
+
+.trainer-review__content {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include breakpoint-down(desktop) {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	&>* {
+		flex: 0 0 auto;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.trainer-review__info {
+	position: relative;
+	z-index: 0;
+	padding-top: 110px;
+	padding-bottom: 50px;
+	max-width: 50%;
+	min-height: 900px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	background-color: $primary-300;
+	overflow: hidden;
+
+	@include breakpoint-down(desktop) {
+		max-width: 100%;
+		min-height: 427px;
+		overflow: visible;
+	}
+
+	@include breakpoint-down(tablet) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 70px;
+		padding-bottom: 358px;
+	}
+
+	&::before {
+		@include breakpoint-down(desktop) {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 50%;
+			width: 100vw;
+			height: 100%;
+			background-color: $primary-300;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+.trainer-review__name {
+	margin-bottom: 30px;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 900;
+
+	@include breakpoint-down(tablet) {
+		margin-bottom: 20px;
+		font-size: 30px;
+	}
+}
+
+.trainer-review__description {
+	margin-bottom: 10px;
+	max-width: 390px;
+	font-family: $font-second;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 500;
+	letter-spacing: -.05em;
+
+	@include breakpoint-down(tablet) {
+		font-size: 16px;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: 100%;
+	}
+}
+
+.truncate-text {
+	transition: all $transition-default;
+}
+
+.short .truncate-text {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+	line-height: 1.2em;
+	height: 7.2em;
+}
+
+// .short + .trainer-review__read-more {
+// 	display: block;
+// }
+
+.trainer-review__read-more {
+	display: none;
+	color: $accent-400;
+	font-size: 16px;
+	font-weight: 700;
+
+	&:hover,
+	&:focus {
+		color: $accent-300;
+	}
+
+	@include breakpoint-down(tablet) {
+		font-size: 14px;
+	}
+}
+
+.trainer-review__wrap-buttons {
+	margin-top: 50px;
+	display: flex;
+	gap: 10px;
+
+	@include breakpoint-down(tablet) {
+		margin-top: 30px;
+		max-width: 320px;
+		flex-wrap: wrap;
+	}
+}
+
+.wrap-image {
+	position: absolute;
+	z-index: -1;
+	right: -130px;
+	bottom: 0;
+	overflow: hidden;
+
+	@include breakpoint-down(desktop) {
+		width: 350px;
+		right: 50px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		width: 315px;
+		height: 427px;
+		right: 30px;
+	}
+
+	@include breakpoint-down(tablet) {
+		right: -75px;
+	}
+
+	@include breakpoint-down(mobile) {
+		width: 320px;
+		height: 300px;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+	}
+}
+
+.trainer-review__reviews {
+	position: relative;
+	padding-top: 110px;
+	padding-bottom: 50px;
+	min-height: 900px;
+	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+
+	@include breakpoint-down(desktop) {
+		max-width: 100%;
+		min-height: 427px;
+		display: block;
+	}
+
+	@include breakpoint-down(tablet) {
+		padding-top: 100px;
+		padding-bottom: 70px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 70px;
+		padding-bottom: 50px;
+	}
+}
+
+.trainer-review__reviews-title {
+	max-width: 682px;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 900;
+
+	@include breakpoint-down(tablet) {
+		font-size: 30px;
+		max-width: 510px;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: 100%;
+	}
+}
+
+.trainer-review__list {
+	max-width: 682px;
+	margin-top: 50px;
+
+	@include breakpoint-down(tablet) {
+		max-width: 510px;
+		margin-top: 30px;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		max-width: 100%;
+	}
+}
+
+.review {
+	padding-left: 13px;
+	min-height: 400px;
+	border-left: 3px solid $accent-400;
+
+	@include breakpoint-down(tablet) {
+		min-height: 328px;
+	}
+}
+
+.review__author {}
+
+.review__author-name {
+	margin-bottom: 6px;
+	font-size: 18px;
+	font-weight: 900;
+
+	@include breakpoint-down(tablet) {
+		margin-bottom: 10px;
+	}
+}
+
+.review__rating {
+	display: flex;
+	gap: 5px;
+}
+
+.review__star {
+	width: 16px;
+	height: 16px;
+	color: $accent-400;
+}
+
+.review__comment {
+	margin-top: 30px;
+	max-width: 525px;
+	font-family: $font-second;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 500;
+	letter-spacing: -.05em;
+
+	@include breakpoint-down(tablet) {
+		margin-top: 20px;
+		max-width: 100%;
+		font-size: 16px;
+	}
+}
+
+.slider-review {}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-wrapper {
+	height: auto;
+}
+
+.swiper-pagination {
+	position: static;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	height: 25px;
+}
+
+.navigation {
+	margin-top: 55px;
+	display: flex;
+	gap: 50px;
+
+	@include breakpoint-down(tablet) {
+		margin-top: 30px;
+	}
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+	width: auto;
+}
+
+.swiper-pagination-bullet {
+	--swiper-pagination-bullet-width: 14px;
+	--swiper-pagination-bullet-height: 14px;
+	--swiper-pagination-bullet-horizontal-gap: 0;
+	--swiper-pagination-bullet-inactive-color: transparent;
+	border: 2px solid $primary-400;
+	transition: all $transition-default;
+}
+
+.swiper-pagination-bullet:hover,
+.swiper-pagination-bullet:focus {
+	--swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: $accent-400;
+	border-color: $accent-400;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	position: static;
+	width: 25px;
+	height: 25px;
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: transparentize($primary-400, .5);
+	transition: color $transition-default;
+	border: none;
+	background-color: transparent;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+	color: $primary-400;
+}
+
+/* ------------------------------------------------------------ *\
+	Blocks: real-results
+\* ------------------------------------------------------------ */
+.real-results {
+	position: relative;
+	padding-top: 120px;
+	padding-bottom: 120px;
+
+	@include breakpoint-down(tablet) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 50%;
+		height: 100%;
+		background-color: $primary-300;
+
+		@include breakpoint-down(desktop) {
+			top: auto;
+			left: 0;
+			width: 100%;
+			height: calc(120px + 60px);
+		}
+
+		@include breakpoint-down(tablet) {
+			top: auto;
+			left: 0;
+			width: 100%;
+			height: calc(70px + 60px);
+		}
+
+		@include breakpoint-down(mobile) {
+			top: auto;
+			left: 0;
+			width: 100%;
+			height: calc(50px + 40px);
+		}
+	}
+}
+
+.real-results__content {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 30px;
+
+	@include breakpoint-down(desktop) {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+
+	&>* {
+		flex: 0 0 auto;
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.real-results__left {
+	max-width: calc(42.44% - 15px);
+
+	@include breakpoint-down(desktop) {
+		max-width: 100%;
+	}
+}
+
+.real-results__right {
+	max-width: calc(57.56% - 15px);
+
+	@include breakpoint-down(desktop) {
+		max-width: 100%;
+	}
+}
+
+.real-results__title,
+.real-results__subtext {
+	max-width: 530px;
+
+	@include breakpoint-down(desktop) {
+		max-width: 682px;
+	}
+
+	@include breakpoint-down(tablet) {
+		max-width: 510px;
+	}
+}
+
+.real-results__title {
+	margin-bottom: 20px;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 900;
+
+	@include breakpoint-down(tablet) {
+		font-size: 30px;
+	}
+
+	&>br {
+		@include breakpoint-down(tablet) {
+			display: none;
+		}
+
+		@include breakpoint-down(mobile) {
+			display: block;
+		}
+	}
+}
+
+.real-results__subtext {
+	font-family: $font-second;
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 500;
+	letter-spacing: -.05em;
+
+	@include breakpoint-down(tablet) {
+		font-size: 20px;
+	}
+}
+
+// .real-results__slider-1 {
+// 	margin-top: 100px;
+// 	height: 25px;
+// 	width: 332px;
+// }
+
+
+.real-results__slider-2 {
+	position: relative;
+	padding-top: 60px;
+	padding-right: 60px;
+	padding-bottom: 60px;
+	padding-left: 60px;
+	background-color: $accent-400;
+
+	@include breakpoint-down(desktop) {
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 10px;
+		padding-right: 10px;
+		padding-bottom: 40px;
+		padding-left: 10px;
+	}
+
+	&:before,
+	&:after {
+		position: absolute;
+		bottom: calc(30px - (14px * 1.4 / 2));
+		color: $white;
+		font-family: $font-second;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 500;
+		letter-spacing: -.05em;
+
+		@include breakpoint-down(mobile) {
+			bottom: calc(20px - (14px * 1.4 / 2));
+		}
+	}
+
+	&:before {
+		content: 'Before';
+		left: calc(60px + 832px / 4);
+		transform: translateX(-50%);
+
+		@include breakpoint-down(large-desktop) {
+			left: calc(60px + 714px / 4);
+		}
+
+		@include breakpoint-down(desktop) {
+			left: calc(30px + 1110px / 4);
+		}
+
+		@include breakpoint-down(small-desktop) {
+			left: calc(30px + 910px / 4);
+		}
+
+		@include breakpoint-down(tablet) {
+			left: calc(30px + 628px / 4);
+		}
+
+		@include breakpoint-down(mobile) {
+			left: calc(10px + 510px / 4);
+		}
+
+		@include breakpoint-down(mobile-small) {
+			left: calc(10px + (100% - (10px + 20px) * 2) / 4);
+		}
+	}
+
+	&:after {
+		content: 'After';
+		right: calc(60px + 832px / 4);
+		transform: translateX(50%);
+
+		@include breakpoint-down(large-desktop) {
+			right: calc(60px + 714px / 4);
+		}
+
+		@include breakpoint-down(desktop) {
+			right: calc(30px + 1110px / 4);
+		}
+
+		@include breakpoint-down(small-desktop) {
+			right: calc(30px + 910px / 4);
+		}
+
+		@include breakpoint-down(tablet) {
+			right: calc(30px + 628px / 4);
+		}
+
+		@include breakpoint-down(mobile) {
+			right: calc(10px + 510px / 4);
+		}
+
+		@include breakpoint-down(mobile-small) {
+			right: calc(10px + (100% - (10px + 20px) * 2) / 4);
+		}
+	}
+}
+
+.slider-ba-text {
+	max-width: 540px;
+	margin-left: 0;
+
+	@include breakpoint-down(desktop) {
+		max-width: 682px;
+	}
+}
+
+.slider-ba-text .navigation {
+	margin-top: 100px;
+
+	@include breakpoint-down(desktop) {
+		margin-top: 50px;
+	}
+}
+
+.slider-ba-image {
+	@include breakpoint-down(tablet) {
+		max-height: 504px;
+	}
+
+	@include breakpoint-down(mobile) {
+		// max-height: 242px;
+	}
+}
+
+.slider-ba-image .swiper-slide img {
+
+	@include breakpoint-down(mobile) {
+		// height: auto;
+	}
+}
+
+
+.real-results__slider-inner {
+	display: flex;
+	gap: 3px;
+	height: 680px;
+
+	@include breakpoint-down(tablet) {
+		height: 100%;
+		max-height: 504px;
+	}
+
+	&>* {
+		flex: 0 1 auto;
+		width: 100%;
+		max-width: 50%;
+	}
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.image-slider {
+	position: relative;
+	display: inline-block;
+
+	max-height: 600px;
+}
+
+.image-slider div>img {
+	max-width: none;
+}
+
+.image-slider>div {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	max-width: 100%;
+	overflow: hidden;
+	resize: horizontal;
+}
+
+.image-slider>div::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 5px;
+	height: 100%;
+	background-color: #fff;
+	cursor: ew-resize;
 }

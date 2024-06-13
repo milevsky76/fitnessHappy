@@ -17,6 +17,9 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 }
 ?>
 <!-- /wp-content/themes/testproject/resources/images/previews/ -->
+<!-- Link Swiper's CSS -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+
 <header class="header">
 	<div class="container">
 		<div class="header__content">

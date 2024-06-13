@@ -9,6 +9,39 @@ import {
 const init = function () {
 	const $section = $(this);
 
+	let sliderReview = new Swiper(".slider-review", {
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+	});
+
+	let sliderBaText = new Swiper(".slider-ba-text", {
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
+	});
+
+	let sliderBaImage = new Swiper(".slider-ba-image", {});
+
+	sliderBaText.controller.control = sliderBaImage;
+	sliderBaImage.controller.control = sliderBaText;
+
+	// let moreButton = document.querySelectorAll(".js-more");
+	// 	moreButton.onclick = function (evt) {
+	// 	document.querySelector('trainer-review__description.short').classList.remove("short");
+	// 	evt.preventDefault();
+	// };
+
 	function scrollHorizontally(evt) {
 		const delta = evt.wheelDelta ? evt.wheelDelta / 40 : evt.detail ? -evt.detail : 0;
 		this.scrollLeft -= delta * 10;

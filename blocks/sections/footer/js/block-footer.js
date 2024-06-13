@@ -5,9 +5,10 @@ import {
 	initScript
 } from '../../../../resources/js/utils/init-script'
 
-
 const init = function () {
-	const $section = $(this)
+	const $section = $(this);
+
+	console.log();
 
 	document.getElementsByName("form-msg").forEach(form => {
 		const fields = form.querySelectorAll('.form__field .form__input, .form__field .form__textarea');

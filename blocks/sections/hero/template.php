@@ -749,12 +749,13 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	</div>
 </section>
 
-<!-- <div class="image-slider">
-	<div>
-		<img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-1.jpg" alt="Before" />
-	</div>
-	<img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-2.jpg" alt="After" />
-</div> -->
+<div class="image-slider">
+    <div id="slider">
+        <img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-1.jpg" alt="Before">
+        <div class="resize-handle"></div>
+    </div>
+    <img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-2.jpg" alt="After">
+</div>
 
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal-old">

@@ -1026,9 +1026,9 @@
 	height: 7.2em;
 }
 
-// .short + .trainer-review__read-more {
-// 	display: block;
-// }
+.short + .trainer-review__read-more {
+	display: block;
+}
 
 .trainer-review__read-more {
 	display: none;
@@ -1572,6 +1572,9 @@
 	position: relative;
 	display: inline-block;
 
+	width: 100%;
+	max-width: 422px;
+	height: 100%;
 	max-height: 600px;
 }
 
@@ -1590,13 +1593,39 @@
 	resize: horizontal;
 }
 
-.image-slider>div::before {
-	content: '';
+// .image-slider > div {
+// 	position: relative;
+// 	overflow: hidden;
+// 	border: 1px solid #000;
+// 	width: 300px; /* начальная ширина */
+// 	height: 200px; /* начальная высота */
+// }
+
+// .image-slider img {
+// 	display: block;
+// 	width: 100%;
+// 	height: auto;
+// }
+
+.resize-handle {
 	position: absolute;
-	right: 0;
+	z-index: 0;
 	bottom: 0;
-	width: 5px;
+	right: 0;
+	width: 3px;
 	height: 100%;
-	background-color: #fff;
-	cursor: ew-resize;
+	background-color: #ffffff;
+	cursor: e-resize;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 9px;
+		height: 60px;
+		background-color: #135978;
+	}
 }

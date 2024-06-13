@@ -9,6 +9,32 @@ import {
 const init = function () {
 	const $section = $(this);
 
+	const slider = document.getElementById('slider');
+	const resizeHandle = document.querySelector('.resize-handle');
+	let isResizing = false;
+	let startX, startY, startWidth, startHeight;
+
+	resizeHandle.addEventListener('mousedown', function (e) {
+		e.preventDefault();
+		isResizing = true;
+		startX = e.clientX;
+		startY = e.clientY;
+		startWidth = parseInt(document.defaultView.getComputedStyle(slider).width, 10);
+		// startHeight = parseInt(document.defaultView.getComputedStyle(slider).height, 10);
+	});
+
+	document.addEventListener('mousemove', function (e) {
+		if (!isResizing) return;
+		const newWidth = startWidth + (e.clientX - startX);
+		// const newHeight = startHeight + (e.clientY - startY);
+		slider.style.width = newWidth + 'px';
+		// slider.style.height = newHeight + 'px';
+	});
+
+	document.addEventListener('mouseup', function () {
+		isResizing = false;
+	});
+
 	let sliderReview = new Swiper(".slider-review", {
 		navigation: {
 			nextEl: ".swiper-button-next",
@@ -33,11 +59,20 @@ const init = function () {
 
 	let sliderBaImage = new Swiper(".slider-ba-image", {});
 
+	
+	// let sliderBaImage = new Swiper(".slider-ba-image", {
+	// 	slidesPerView: "auto",
+	// 	spaceBetween: 30,
+	// 	centeredSlides: true,
+	// 	allowTouchMove: false,
+	// });
+
 	sliderBaText.controller.control = sliderBaImage;
 	sliderBaImage.controller.control = sliderBaText;
 
 	// let moreButton = document.querySelectorAll(".js-more");
-	// 	moreButton.onclick = function (evt) {
+	// console.log(moreButton);
+	// moreButton.onclick = function (evt) {
 	// 	document.querySelector('trainer-review__description.short').classList.remove("short");
 	// 	evt.preventDefault();
 	// };

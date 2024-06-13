@@ -16,10 +16,6 @@ const init = function () {
 	const firstInteractiveElement = headerDrop.querySelector('.header__link');
 	const wpSiteBlocks = document.querySelector('.wp-site-blocks');
 
-	$(document).ready(function(){
-		console.log(jQuery.fn.jquery);
-		});
-
 	if (header) {
 		wpSiteBlocks.addEventListener("scroll", () => {
 			if (wpSiteBlocks.scrollTop) {

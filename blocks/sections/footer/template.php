@@ -186,6 +186,40 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 		</div>
 	</div>
 </div>
+<!-- Modal youtube video -->
+<div class="modal fade modal-video" id="modal-video-youtube" aria-hidden="true" aria-label="YouTube Video" tabindex="-1" aria-modal="true" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-xl">
+				<div class="modal-content">
+						<div class="modal-body">
+							<button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+								<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m13.326 12.001 10.4-10.4A.937.937 0 1 0 22.4.276L12 10.676 1.6.275A.937.937 0 1 0 .275 1.6l10.4 10.4-10.4 10.4A.938.938 0 1 0 1.6 23.726L12 13.326l10.4 10.4a.935.935 0 0 0 1.325 0 .937.937 0 0 0 0-1.325L13.325 12Z"></path></svg>
+							</button>
+
+							<div class="video-wrapper">
+								<div id="modal-video-player"></div>
+							</div>
+						</div>
+				</div>
+		</div>
+</div>
+<!-- Modal local video -->
+<div class="modal fade modal-video" id="modal-video-local" aria-hidden="true" aria-label="YouTube Video" tabindex="-1" aria-modal="true" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+					<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m13.326 12.001 10.4-10.4A.937.937 0 1 0 22.4.276L12 10.676 1.6.275A.937.937 0 1 0 .275 1.6l10.4 10.4-10.4 10.4A.938.938 0 1 0 1.6 23.726L12 13.326l10.4 10.4a.935.935 0 0 0 1.325 0 .937.937 0 0 0 0-1.325L13.325 12Z"></path></svg>
+				</button>
+
+				<div class="video-wrapper">
+					<video disablepictureinpicture="" controls="" playsinline="">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 \Harbinger_Marketing\Modal_Action::render_modals();

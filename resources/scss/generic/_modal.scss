@@ -116,21 +116,39 @@
 }
 
 @include breakpoint-up(mobile) {
-	.modal-dialog {
+
+	.modal-dialog,
+	.modal-xl {
 		max-width: 688px;
 	}
 }
 
 @include breakpoint-up(tablet) {
-	.modal-dialog {
+
+	.modal-dialog,
+	.modal-xl {
 		max-width: 825px;
 	}
 }
 
-@include breakpoint-up(small-desktop) {}
+@include breakpoint-up(small-desktop) {
+	.modal-xl {
+		max-width: 1200px;
+	}
+}
 
 @include breakpoint-up(desktop) {
 	.modal-lg {
+		max-width: 1362px;
+	}
+
+	.modal-xl {
+		max-width: 1281px;
+	}
+}
+
+@include breakpoint-up(large-desktop) {
+	.modal-xl {
 		max-width: 1362px;
 	}
 }
@@ -245,4 +263,28 @@
 	.modal-fullscreen-xxl-down .modal-body {
 		overflow-y: auto;
 	}
+}
+
+.modal-video .modal-body {
+	padding: 0;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	display: block;
+	height: 0;
+	overflow: hidden
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto
 }

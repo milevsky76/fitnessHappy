@@ -24,6 +24,9 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 <!-- /wp-content/themes/testproject/resources/images/previews/ -->
 <section class="section section-hero">
 	<div class="section-hero__bg" aria-hidden="true">
+		<!-- <video class="section-hero__bg-image" src="/wp-content/themes/testproject/resources/images/previews/office.mp4" disablepictureinpicture=""  playsinline="" autoplay="" muted loop>
+			Your browser does not support the video tag.
+		</video> -->
 		<img class="section-hero__bg-image" src="/wp-content/themes/testproject/resources/images/previews/hero-bg.jpg" alt="" width="1920" height="930">
 	</div>
 
@@ -67,7 +70,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 				<div class="section-hero__buttons">
 					<button class="section-hero__consultation button" type="button" data-bs-toggle="modal" data-bs-target="#modalBookConsultation">Book Consultation</button>
 
-					<button class="button button--transparent section-hero__play" type="button">
+					<button class="button button--transparent section-hero__play js-play-overlay" type="button" data-is-play="true">
 						<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M17.338 7.692 5.525.411A2.698 2.698 0 0 0 2.761.352c-.876.49-1.399 1.381-1.399 2.385v14.496c0 1.518 1.223 2.759 2.726 2.767H4.1c.47 0 .959-.147 1.416-.426a.78.78 0 1 0-.812-1.332c-.214.13-.423.198-.608.198a1.212 1.212 0 0 1-1.174-1.207V2.737c0-.43.224-.813.6-1.023.376-.21.82-.2 1.185.025L16.52 9.02c.355.219.558.583.557 1 0 .417-.205.78-.562.999l-8.54 5.229a.78.78 0 1 0 .814 1.33l8.54-5.228a2.712 2.712 0 0 0 1.308-2.327 2.712 2.712 0 0 0-1.299-2.33Z"></path></svg>
 						<span>Play Video</span>
 					</button>
@@ -125,7 +128,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 				<span class="gallery__slogon">A fitness training center for <br> women, by women</span>
 			</header>
 			
-			<div class="gallery__list">
+			<!-- <div class="gallery__list">
 				<div class="gallery__col-left">
 					<div class="gallery__box-3">
 						<div class="gallery__box-2">
@@ -221,6 +224,98 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 						</a>
 						<span class="gallery__count">2 photos</span>
 					</div>
+				</div>
+			</div> -->
+
+			<div class="gallery__list1">
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image bg-1" src="/wp-content/themes/testproject/resources/images/previews/g-1.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-1.jpg" data-id="1">
+						<h3 class="gallery__subtitle">Beginners <br> Welcome</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-2.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-2.jpg" data-id="2">
+						<h3 class="gallery__subtitle">Virtual/Hybrid <br> Training</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image bg-3" src="/wp-content/themes/testproject/resources/images/previews/g-3.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-3.jpg" data-id="3">
+						<h3 class="gallery__subtitle">Personal <br> Training</h3>
+					</a>
+					<span class="gallery__count">5 photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-4.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-4.jpg" data-id="4">
+						<h3 class="gallery__subtitle">On-Demand <br> Programs</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-5.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-5.jpg" data-id="5">
+						<h3 class="gallery__subtitle">The mind <br> fitness</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image bg-6" src="/wp-content/themes/testproject/resources/images/previews/g-6.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-6.jpg" data-id="6">
+						<h3	h3 class="gallery__subtitle">Semi-Private Training <br> for Women</h3>
+					</a>
+					<span class="gallery__count">2 photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-7.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-7.jpg" data-id="7">
+						<h3 class="gallery__subtitle">Nutrition <br> Program</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-8.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-8.jpg" data-id="8">
+						<h3 class="gallery__subtitle">Co-ed <br> Training</h3>
+					</a>
+					<span class="gallery__count">2 Photos</span>
+				</div>
+			
+				<div class="gallery__item1">
+					<div class="gallery__image-wrap">
+						<img class="gallery__image bg-9" src="/wp-content/themes/testproject/resources/images/previews/g-9.jpg" alt="">
+					</div>
+					<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-9.jpg" data-id="9">
+						<h3 class="gallery__subtitle">Functional <br> Fitness</h3>
+					</a>
+					<span class="gallery__count">2 photos</span>
 				</div>
 			</div>
 

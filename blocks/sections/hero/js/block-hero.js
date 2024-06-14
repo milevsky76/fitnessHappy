@@ -9,6 +9,19 @@ import {
 const init = function () {
 	const $section = $(this);
 
+	// document.querySelector('.js-play-overlay').addEventListener('click', function (e) {
+	// 	const video = document.querySelector('.section-hero__bg-image');
+	// 	let isPlay = this.dataset.isPlay;
+
+	// 	if (isPlay === 'true') {
+	// 		video.pause();
+	// 		this.dataset.isPlay = 'false';
+	// 	} else {
+	// 		video.play();
+	// 		this.dataset.isPlay = 'true';
+	// 	}
+	// });
+	
 	const slider = document.getElementById('slider');
 	const resizeHandle = document.querySelector('.resize-handle');
 	let isResizing = false;

@@ -24,9 +24,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 <!-- /wp-content/themes/testproject/resources/images/previews/ -->
 <section class="section section-hero">
 	<div class="section-hero__bg" aria-hidden="true">
-		<!-- <video class="section-hero__bg-image" src="/wp-content/themes/testproject/resources/images/previews/office.mp4" disablepictureinpicture=""  playsinline="" autoplay="" muted loop>
-			Your browser does not support the video tag.
-		</video> -->
 		<img class="section-hero__bg-image" src="/wp-content/themes/testproject/resources/images/previews/hero-bg.jpg" alt="" width="1920" height="930">
 	</div>
 
@@ -127,108 +124,9 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 				<h2 class="gallery__title">Our gallery</h2>
 				<span class="gallery__slogon">A fitness training center for <br> women, by women</span>
 			</header>
-			
-			<!-- <div class="gallery__list">
-				<div class="gallery__col-left">
-					<div class="gallery__box-3">
-						<div class="gallery__box-2">
-							<div class="gallery__item">
-								<div class="gallery__image-wrap">
-									<img class="gallery__image bg-1" src="/wp-content/themes/testproject/resources/images/previews/g-1.jpg" alt="">
-								</div>
-								<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-1.jpg" data-id="1">
-									<h3 class="gallery__subtitle">Beginners <br> Welcome</h3>
-								</a>
-								<span class="gallery__count">2 Photos</span>
-							</div>
 
-							<div class="gallery__item">
-								<div class="gallery__image-wrap">
-									<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-2.jpg" alt="">
-								</div>
-								<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-2.jpg" data-id="2">
-									<h3 class="gallery__subtitle">Virtual/Hybrid <br> Training</h3>
-								</a>
-								<span class="gallery__count">2 Photos</span>
-							</div>
-						</div>
-
-						<div class="gallery__item">
-							<div class="gallery__image-wrap">
-								<img class="gallery__image bg-3" src="/wp-content/themes/testproject/resources/images/previews/g-3.jpg" alt="">
-							</div>
-							<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-3.jpg" data-id="3">
-								<h3 class="gallery__subtitle">Personal <br> Training</h3>
-							</a>
-							<span class="gallery__count">5 photos</span>
-						</div>
-					</div>
-
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-4.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-4.jpg" data-id="4">
-							<h3 class="gallery__subtitle">On-Demand <br> Programs</h3>
-						</a>
-						<span class="gallery__count">2 Photos</span>
-					</div>
-
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-5.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-5.jpg" data-id="5">
-							<h3 class="gallery__subtitle">The mind <br> fitness</h3>
-						</a>
-						<span class="gallery__count">2 Photos</span>
-					</div>
-				</div>
-				<div class="gallery__col-right">
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image bg-6" src="/wp-content/themes/testproject/resources/images/previews/g-6.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-6.jpg" data-id="6">
-							<h3	h3 class="gallery__subtitle">Semi-Private Training <br> for Women</h3>
-						</a>
-						<span class="gallery__count">2 photos</span>
-					</div>
-
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-7.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-7.jpg" data-id="7">
-							<h3 class="gallery__subtitle">Nutrition <br> Program</h3>
-						</a>
-						<span class="gallery__count">2 Photos</span>
-					</div>
-
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-8.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-8.jpg" data-id="8">
-							<h3 class="gallery__subtitle">Co-ed <br> Training</h3>
-						</a>
-						<span class="gallery__count">2 Photos</span>
-					</div>
-				
-					<div class="gallery__item">
-						<div class="gallery__image-wrap">
-							<img class="gallery__image bg-9" src="/wp-content/themes/testproject/resources/images/previews/g-9.jpg" alt="">
-						</div>
-						<a class="gallery__link js-open-gallery" href="/wp-content/themes/testproject/resources/images/previews/g-9.jpg" data-id="9">
-							<h3 class="gallery__subtitle">Functional <br> Fitness</h3>
-						</a>
-						<span class="gallery__count">2 photos</span>
-					</div>
-				</div>
-			</div> -->
-
-			<div class="gallery__list1">
-				<div class="gallery__item1">
+			<div class="gallery__list">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image bg-1" src="/wp-content/themes/testproject/resources/images/previews/g-1.jpg" alt="">
 					</div>
@@ -238,7 +136,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-2.jpg" alt="">
 					</div>
@@ -248,7 +146,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image bg-3" src="/wp-content/themes/testproject/resources/images/previews/g-3.jpg" alt="">
 					</div>
@@ -258,7 +156,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">5 photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-4.jpg" alt="">
 					</div>
@@ -268,7 +166,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-5.jpg" alt="">
 					</div>
@@ -278,7 +176,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image bg-6" src="/wp-content/themes/testproject/resources/images/previews/g-6.jpg" alt="">
 					</div>
@@ -288,7 +186,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-7.jpg" alt="">
 					</div>
@@ -298,7 +196,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image" src="/wp-content/themes/testproject/resources/images/previews/g-8.jpg" alt="">
 					</div>
@@ -308,7 +206,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 					<span class="gallery__count">2 Photos</span>
 				</div>
 			
-				<div class="gallery__item1">
+				<div class="gallery__item">
 					<div class="gallery__image-wrap">
 						<img class="gallery__image bg-9" src="/wp-content/themes/testproject/resources/images/previews/g-9.jpg" alt="">
 					</div>
@@ -884,13 +782,13 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	</div>
 </section>
 
-<div class="image-slider">
+<!-- <div class="image-slider">
     <div id="slider">
         <img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-1.jpg" alt="Before">
         <div class="resize-handle"></div>
     </div>
     <img src="/wp-content/themes/testproject/resources/images/previews/real-results-1-2.jpg" alt="After">
-</div>
+</div> -->
 
 <!-- The Modal/Lightbox -->
 <div id="myModal" class="modal-old">

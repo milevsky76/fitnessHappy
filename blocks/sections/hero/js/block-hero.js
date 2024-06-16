@@ -9,44 +9,32 @@ import {
 const init = function () {
 	const $section = $(this);
 
-	// document.querySelector('.js-play-overlay').addEventListener('click', function (e) {
-	// 	const video = document.querySelector('.section-hero__bg-image');
-	// 	let isPlay = this.dataset.isPlay;
+	// const slider = document.getElementById('slider');
+	// const resizeHandle = document.querySelector('.resize-handle');
+	// let isResizing = false;
+	// let startX, startY, startWidth, startHeight;
 
-	// 	if (isPlay === 'true') {
-	// 		video.pause();
-	// 		this.dataset.isPlay = 'false';
-	// 	} else {
-	// 		video.play();
-	// 		this.dataset.isPlay = 'true';
-	// 	}
+	// resizeHandle.addEventListener('mousedown', function (e) {
+	// 	e.preventDefault();
+	// 	isResizing = true;
+	// 	startX = e.clientX;
+	// 	startY = e.clientY;
+	// 	startWidth = parseInt(document.defaultView.getComputedStyle(slider).width, 10);
+	// 	// startHeight = parseInt(document.defaultView.getComputedStyle(slider).height, 10);
 	// });
-	
-	const slider = document.getElementById('slider');
-	const resizeHandle = document.querySelector('.resize-handle');
-	let isResizing = false;
-	let startX, startY, startWidth, startHeight;
 
-	resizeHandle.addEventListener('mousedown', function (e) {
-		e.preventDefault();
-		isResizing = true;
-		startX = e.clientX;
-		startY = e.clientY;
-		startWidth = parseInt(document.defaultView.getComputedStyle(slider).width, 10);
-		// startHeight = parseInt(document.defaultView.getComputedStyle(slider).height, 10);
-	});
+	// document.addEventListener('mousemove', function (e) {
+	// 	console.log(123);
+	// 	if (!isResizing) return;
+	// 	const newWidth = startWidth + (e.clientX - startX);
+	// 	// const newHeight = startHeight + (e.clientY - startY);
+	// 	slider.style.width = newWidth + 'px';
+	// 	// slider.style.height = newHeight + 'px';
+	// });
 
-	document.addEventListener('mousemove', function (e) {
-		if (!isResizing) return;
-		const newWidth = startWidth + (e.clientX - startX);
-		// const newHeight = startHeight + (e.clientY - startY);
-		slider.style.width = newWidth + 'px';
-		// slider.style.height = newHeight + 'px';
-	});
-
-	document.addEventListener('mouseup', function () {
-		isResizing = false;
-	});
+	// document.addEventListener('mouseup', function () {
+	// 	isResizing = false;
+	// });
 
 	let sliderReview = new Swiper(".slider-review", {
 		navigation: {
@@ -60,6 +48,7 @@ const init = function () {
 	});
 
 	let sliderBaText = new Swiper(".slider-ba-text", {
+		initialSlide: 1,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
@@ -70,15 +59,37 @@ const init = function () {
 		},
 	});
 
-	let sliderBaImage = new Swiper(".slider-ba-image", {});
+	let windowWidth = window.innerWidth;
+	let coverflowEffect = {
+		rotate: 0,
+		stretch: 183,
+		depth: 100,
+		modifier: 1,
+		scale: 0.85,
+	};
 
-	
-	// let sliderBaImage = new Swiper(".slider-ba-image", {
-	// 	slidesPerView: "auto",
-	// 	spaceBetween: 30,
-	// 	centeredSlides: true,
-	// 	allowTouchMove: false,
-	// });
+	if (windowWidth <= 575) {
+		coverflowEffect.stretch = 90;
+	} else if (windowWidth <= 767) {
+		coverflowEffect.stretch = 124;
+	} else if (windowWidth <= 1024) {
+		coverflowEffect.stretch = 125;
+	} else if (windowWidth <= 1279) {
+		coverflowEffect.stretch = 34;
+	} else if (windowWidth <= 1539) {
+		coverflowEffect.stretch = 54;
+	} else if (windowWidth <= 1719) {
+		coverflowEffect.stretch = 181;
+	}
+
+	let sliderBaImage = new Swiper(".slider-ba-image", {
+		initialSlide: 1,
+		slidesPerView: "auto",
+		centeredSlides: true,
+		allowTouchMove: false,
+		effect: "coverflow",
+		coverflowEffect: coverflowEffect,
+	});
 
 	sliderBaText.controller.control = sliderBaImage;
 	sliderBaImage.controller.control = sliderBaText;

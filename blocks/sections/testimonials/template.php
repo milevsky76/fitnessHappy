@@ -19,45 +19,47 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 /**
  * Block Variables
  */
-
+$section_title = get_field( 'section_title' );
+$testimonials_buttons = get_field( 'testimonials_buttons_buttons_generator' );
 ?>
 
 <section class="testimonials">
 	<div class="container">
-		<h2 class="testimonials__title">Testimonials</h2>
+		<?php if ( !empty( $section_title ) ) : ?>
+			<h2 class="testimonials__title"><?= apply_filters( 'the_content', $section_title ) ?></h2>
+		<?php endif; ?>
 
-		<ul class="testimonials__list">
-			<li class="testimonials__item">
-				<a class="testimonials__link js-button-play-video-local" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-video-local" 
-					data-local-video-poster="/wp-content/themes/testproject/resources/images/previews/office-poster.jpg"
-					data-local-video-src="/wp-content/themes/testproject/resources/images/previews/office.mp4" aria-label="Play">
-					<img class="testimonials__image" src="/wp-content/themes/testproject/resources/images/previews/testimonials-1.jpg" alt="">
+		<?php if (!empty($testimonials_buttons)) : ?>
+			<ul class="testimonials__list">
+				<?php foreach ($testimonials_buttons as $button) : ?>
+					<?php
+						$button_type = $button['button']['video_popup']['video_type'];
+						$background_image = $button['button']['video_popup']['image_poster'];
+					?>
 
-					<span class="testimonials__button-play icon-wrap">
-						<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M9.966 6.012v37.981c0 .904.959 1.485 1.76 1.067l36.239-18.926c.86-.45.861-1.68.002-2.131L11.73 4.947a1.203 1.203 0 0 0-1.763 1.065Z"></path></svg>
-					</span>
-				</a>
-			</li>
+					<li class="testimonials__item">
+						<? if ( 'youtube' === $button_type ) : ?>
+							<a class="testimonials__link js-button-play-youtube" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-video-youtube" data-youtube-id="<?= $button['button']['video_popup']['youtube_link'] ?>" aria-label="Play">
+								<img class="testimonials__image" src="<?= esc_url( wp_get_attachment_image_url( $background_image, 'full-hd' ) ) ?>" alt="">
+								
+								<span class="testimonials__button-play icon-wrap">
+									<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M9.966 6.012v37.981c0 .904.959 1.485 1.76 1.067l36.239-18.926c.86-.45.861-1.68.002-2.131L11.73 4.947a1.203 1.203 0 0 0-1.763 1.065Z"></path></svg>
+								</span>
+							</a>
+						<? elseif ( 'self_hosted' === $button_type ) : ?>
+							<a class="testimonials__link js-button-play-video-local" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-video-local" 
+								data-local-video-poster="<?= esc_url( wp_get_attachment_image_url( $background_image, 'full-hd' ) ) ?>"
+								data-local-video-src="<?= wp_get_attachment_url( $button['button']['video_popup']['video_file'] ) ?>" aria-label="Play">
+								<img class="testimonials__image" src="<?= esc_url( wp_get_attachment_image_url( $background_image, 'full-hd' ) ) ?>" alt="">
 
-			<li class="testimonials__item">
-				<a class="testimonials__link js-button-play-youtube" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-video-youtube" data-youtube-id="S2ihdoT2noo" aria-label="Play">
-					<img class="testimonials__image" src="/wp-content/themes/testproject/resources/images/previews/testimonials-2.jpg" alt="">
-
-					<span class="testimonials__button-play icon-wrap">
-						<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M9.966 6.012v37.981c0 .904.959 1.485 1.76 1.067l36.239-18.926c.86-.45.861-1.68.002-2.131L11.73 4.947a1.203 1.203 0 0 0-1.763 1.065Z"></path></svg>
-					</span>
-				</a>
-			</li>
-
-			<li class="testimonials__item">
-				<a class="testimonials__link js-button-play-youtube" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal-video-youtube" data-youtube-id="BBsITpXLdcE" aria-label="Play">
-					<img class="testimonials__image" src="/wp-content/themes/testproject/resources/images/previews/testimonials-3.jpg" alt="">
-					
-					<span class="testimonials__button-play icon-wrap">
-						<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M9.966 6.012v37.981c0 .904.959 1.485 1.76 1.067l36.239-18.926c.86-.45.861-1.68.002-2.131L11.73 4.947a1.203 1.203 0 0 0-1.763 1.065Z"></path></svg>
-					</span>
-				</a>
-			</li>
-		</ul>
+								<span class="testimonials__button-play icon-wrap">
+									<svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M9.966 6.012v37.981c0 .904.959 1.485 1.76 1.067l36.239-18.926c.86-.45.861-1.68.002-2.131L11.73 4.947a1.203 1.203 0 0 0-1.763 1.065Z"></path></svg>
+								</span>
+							</a>
+						<?php endif; ?>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 	</div>
 </section>

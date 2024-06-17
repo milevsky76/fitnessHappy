@@ -22,4 +22,4 @@ const init = function () {
 }
 
 
-initScript('.section-trainings', 'trainings', init)
+initScript('.trainings', 'trainings', init)

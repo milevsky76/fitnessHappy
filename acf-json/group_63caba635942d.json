@@ -62,23 +62,15 @@
             "type": "image",
             "instructions": "",
             "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63caba6389b77",
-                        "operator": "==",
-                        "value": "self_hosted"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "uploader": "",
-            "acfe_thumbnail": 0,
             "return_format": "id",
+            "acfe_thumbnail": 0,
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -140,5 +132,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1674230576
+    "modified": 1718665867
 }

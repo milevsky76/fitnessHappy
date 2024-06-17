@@ -1,0 +1,92 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Section testimonials
+\* ------------------------------------------------------------ */
+
+.testimonials {
+	padding-top: 75px;
+}
+
+.testimonials__title {
+	margin-bottom: 30px;
+	font-size: 60px;
+	line-height: 1;
+	font-weight: 900;
+	text-align: center;
+
+	@include breakpoint-down(tablet) {
+		margin-bottom: 20px;
+		font-size: 30px;
+	}
+}
+
+.testimonials__list {
+	margin: 0;
+	padding: 30px;
+	display: flex;
+	gap: 30px;
+	list-style: none;
+	background-color: $accent-400;
+
+	@include breakpoint-down(desktop) {
+		padding: 20px;
+		gap: 20px;
+	}
+
+	@include breakpoint-down(small-desktop) {
+		padding: 10px;
+		gap: 10px;
+	}
+
+	@include breakpoint-down(mobile) {
+		flex-direction: column;
+	}
+}
+
+.testimonials__item {}
+
+.testimonials__link {
+	position: relative;
+	display: block;
+
+	@include breakpoint-down(mobile) {
+		height: 250px;
+	}
+
+	@include breakpoint-down(mobile-small) {
+		height: 162px;
+	}
+
+	&:hover,
+	&:focus {
+		.testimonials__button-play {
+			color: $accent-300;
+		}
+	}
+}
+
+.testimonials__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.testimonials__button-play {
+	position: absolute;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	color: $accent-400;
+	transform: translate(-50%, -50%);
+	transition: color $transition-default;
+}

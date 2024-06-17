@@ -16,7 +16,6 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 	return;
 }
 ?>
-<!-- /wp-content/themes/testproject/resources/images/previews/ -->
 <footer class="footer">
 	<div class="container">
 		<div class="footer__main-content">
@@ -220,6 +219,56 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 		</div>
 	</div>
 </div>
+<!-- The Modal/Lightbox -->
+<!-- <div id="myModal" class="modal-old">
+	<div class="modal-content">
+		<button class="close js-close" type="button" aria-label="Close">
+			<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m13.326 12.001 10.4-10.4A.937.937 0 1 0 22.4.276L12 10.676 1.6.275A.937.937 0 1 0 .275 1.6l10.4 10.4-10.4 10.4A.938.938 0 1 0 1.6 23.726L12 13.326l10.4 10.4a.935.935 0 0 0 1.325 0 .937.937 0 0 0 0-1.325L13.325 12Z"></path></svg>
+		</button>
 
+		<div class="slides"></div>
+
+		<div class="controls">
+			<button class="prev js-prev" type="button">
+				<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m.856 10.43 8.559-8.581a.977.977 0 0 1 1.383 1.38l-8.56 8.58c-.381.381-.381 1 0 1.383l8.56 8.58a.977.977 0 1 1-1.383 1.38l-8.558-8.58a2.933 2.933 0 0 1-.001-4.143Z"></path><path d="M6.298 11.523h17.725a.977.977 0 0 1 0 1.954H6.298a.977.977 0 1 1 0-1.954Z"></path></svg>
+			</button>
+
+			<div class="pagination"></div>
+
+			<button class="next js-next" type="button">
+				<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m24.144 10.43-8.559-8.581a.977.977 0 0 0-1.383 1.38l8.56 8.58c.381.381.381 1 0 1.383l-8.56 8.58a.977.977 0 1 0 1.383 1.38l8.558-8.58a2.933 2.933 0 0 0 .001-4.143Z"></path><path d="M18.702 11.523H.977a.977.977 0 0 0 0 1.954h17.725a.977.977 0 1 0 0-1.954Z"></path></svg>
+			</button>
+		</div>
+	</div>
+</div> -->
+<!-- Modal youtube video -->
+<div class="modal fade modal-image" id="modal-image" aria-hidden="true" aria-label="Gallery" tabindex="-1" aria-modal="true" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-xl">
+				<div class="modal-content">
+						<div class="modal-body">
+							<button type="button" class="modal__close" data-bs-dismiss="modal" aria-label="Close">
+								<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m13.326 12.001 10.4-10.4A.937.937 0 1 0 22.4.276L12 10.676 1.6.275A.937.937 0 1 0 .275 1.6l10.4 10.4-10.4 10.4A.938.938 0 1 0 1.6 23.726L12 13.326l10.4 10.4a.935.935 0 0 0 1.325 0 .937.937 0 0 0 0-1.325L13.325 12Z"></path></svg>
+							</button>
+
+							<div class="swiper slider-gallery">
+								<div class="swiper-wrapper"></div>
+								
+								<div class="navigation">
+									<button class="swiper-button-prev" type="button">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="m.856 10.43 8.559-8.581a.977.977 0 0 1 1.383 1.38l-8.56 8.58c-.381.381-.381 1 0 1.383l8.56 8.58a.977.977 0 1 1-1.383 1.38l-8.558-8.58a2.933 2.933 0 0 1-.001-4.143Z"></path><path d="M6.298 11.523h17.725a.977.977 0 0 1 0 1.954H6.298a.977.977 0 1 1 0-1.954Z"></path></svg>
+									</button>
+									<div class="swiper-pagination"></div>
+									<button class="swiper-button-next" type="button">
+										<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path fill-opacity=".5" d="m24.144 10.429-8.559-8.58a.977.977 0 0 0-1.383 1.379l8.56 8.581c.381.38.381 1 0 1.382l-8.56 8.58a.977.977 0 1 0 1.383 1.38l8.558-8.58a2.933 2.933 0 0 0 .001-4.142Z"></path><path fill-opacity=".5" d="M18.702 11.523H.977a.977.977 0 0 0 0 1.954h17.725a.977.977 0 1 0 0-1.954Z"></path></svg>
+									</button>
+								</div>
+							</div>
+						</div>
+				</div>
+		</div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <?php
 \Harbinger_Marketing\Modal_Action::render_modals();

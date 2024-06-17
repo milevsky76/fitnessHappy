@@ -9,108 +9,51 @@ import {
 const init = function () {
 	const $section = $(this);
 
-	// const slider = document.getElementById('slider');
-	// const resizeHandle = document.querySelector('.resize-handle');
-	// let isResizing = false;
-	// let startX, startY, startWidth, startHeight;
+	const modalImage = document.getElementById('modal-image')
 
-	// resizeHandle.addEventListener('mousedown', function (e) {
-	// 	e.preventDefault();
-	// 	isResizing = true;
-	// 	startX = e.clientX;
-	// 	startY = e.clientY;
-	// 	startWidth = parseInt(document.defaultView.getComputedStyle(slider).width, 10);
-	// 	// startHeight = parseInt(document.defaultView.getComputedStyle(slider).height, 10);
-	// });
+	if (modalImage) {
+		modalImage.addEventListener('show.bs.modal', event => {
+			const images = document.querySelectorAll('.gallery__list .gallery__image');
 
-	// document.addEventListener('mousemove', function (e) {
-	// 	console.log(123);
-	// 	if (!isResizing) return;
-	// 	const newWidth = startWidth + (e.clientX - startX);
-	// 	// const newHeight = startHeight + (e.clientY - startY);
-	// 	slider.style.width = newWidth + 'px';
-	// 	// slider.style.height = newHeight + 'px';
-	// });
+			let swiperWrapper = modalImage.querySelector('.swiper-wrapper');
 
-	// document.addEventListener('mouseup', function () {
-	// 	isResizing = false;
-	// });
+			images.forEach(image => {
+				const swiperSlide = document.createElement('div');
+				swiperSlide.classList.add('swiper-slide');
 
-	let sliderReview = new Swiper(".slider-review", {
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-	});
+				const img = document.createElement('img');
+				img.src = image.src;
+				swiperSlide.appendChild(img);
 
-	let sliderBaText = new Swiper(".slider-ba-text", {
-		initialSlide: 1,
-		navigation: {
-			nextEl: ".swiper-button-next",
-			prevEl: ".swiper-button-prev",
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: true,
-		},
-	});
+				swiperWrapper.appendChild(swiperSlide);
+			});
 
-	let windowWidth = window.innerWidth;
-	let coverflowEffect = {
-		rotate: 0,
-		stretch: 183,
-		depth: 100,
-		modifier: 1,
-		scale: 0.85,
-	};
+			let sliderGallery = new Swiper(".slider-gallery", {
+				// centeredSlides: true,
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
+			});
 
-	if (windowWidth <= 575) {
-		coverflowEffect.stretch = 90;
-	} else if (windowWidth <= 767) {
-		coverflowEffect.stretch = 124;
-	} else if (windowWidth <= 1024) {
-		coverflowEffect.stretch = 125;
-	} else if (windowWidth <= 1279) {
-		coverflowEffect.stretch = 34;
-	} else if (windowWidth <= 1539) {
-		coverflowEffect.stretch = 54;
-	} else if (windowWidth <= 1719) {
-		coverflowEffect.stretch = 181;
+			// const button = event.relatedTarget
+			// Extract info from data-bs-* attributes
+			// const recipient = button.getAttribute('data-bs-whatever')
+			// If necessary, you could initiate an Ajax request here
+			// and then do the updating in a callback.
+
+			// Update the modal's content.
+			// const modalTitle = exampleModal.querySelector('.modal-title')
+			// const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+			// modalTitle.textContent = `New message to ${recipient}`
+			// modalBodyInput.value = recipient
+		})
 	}
-
-	let sliderBaImage = new Swiper(".slider-ba-image", {
-		initialSlide: 1,
-		slidesPerView: "auto",
-		centeredSlides: true,
-		allowTouchMove: false,
-		effect: "coverflow",
-		coverflowEffect: coverflowEffect,
-	});
-
-	sliderBaText.controller.control = sliderBaImage;
-	sliderBaImage.controller.control = sliderBaText;
-
-	// let moreButton = document.querySelectorAll(".js-more");
-	// console.log(moreButton);
-	// moreButton.onclick = function (evt) {
-	// 	document.querySelector('trainer-review__description.short').classList.remove("short");
-	// 	evt.preventDefault();
-	// };
-
-	function scrollHorizontally(evt) {
-		const delta = evt.wheelDelta ? evt.wheelDelta / 40 : evt.detail ? -evt.detail : 0;
-		this.scrollLeft -= delta * 10;
-		evt.preventDefault();
-	}
-
-	document.querySelectorAll('.js-tabs').forEach(elem => {
-		elem.addEventListener('mousewheel', scrollHorizontally, false); // IE9, Chrome, Safari, Opera
-		elem.addEventListener('DOMMouseScroll', scrollHorizontally, false); // Firefox
-	});
 
 	// const imagesLink = document.querySelectorAll(".js-open-gallery");
 	// const myModal = document.getElementById("myModal");
@@ -225,4 +168,4 @@ const init = function () {
 }
 
 
-initScript('.section-hero', 'hero', init)
+initScript('.gallery', 'gallery', init)

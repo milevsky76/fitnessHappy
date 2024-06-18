@@ -11,4 +11,4 @@ const init = function () {
 }
 
 
-initScript('.section-testimonials', 'testimonials', init)
+initScript('.testimonials', 'testimonials', init)

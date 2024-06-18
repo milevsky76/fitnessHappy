@@ -19,7 +19,8 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 /**
  * Block Variables
  */
-
+$text = get_field( 'text' );
+$arr_text = explode('<!--more-->', $text);
 ?>
 
 <section class="trainer-review">
@@ -28,13 +29,18 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 			<div class="trainer-review__info">
 				<h2 class="trainer-review__name">Alli Kerr</h2>
 
-				<div class="trainer-review__description short">
-					<div class="truncate-text">
-						business. Knowing I had more to offer the universe Knowing I had more to offer the universe, I got the crazy idea to open my own brick and mortar fitness business. It was an itch that I had to scratch. In 2010 The Happy Fitness was born.
+				<div class="trainer-review__description">
+					<div class="trainer-review__text"><?= $arr_text[0] ?></div>
+
+					<div class="collapse" id="collapseExample">
+						<div class="trainer-review__text"><?= $arr_text[1] ?></div>
 					</div>
 				</div>
 
-				<a class="trainer-review__read-more js-more" href="javascript:void(0);">Read more</a>
+				<a class="trainer-review__read-more" id="toggleButton" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+					Read more
+				</a>
+
 				<div class="trainer-review__wrap-buttons">
 					<button class="button" type="button">Watch Video of The Bio</button>
 					<a class="button button--transparent-inverse" href="javascript:void(0);">Learn More</a>

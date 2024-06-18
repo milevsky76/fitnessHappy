@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_6671176585ab9",
-            "label": "",
-            "name": "",
+            "label": "Text Title",
+            "name": "text_title",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,10 +17,31 @@
                 "id": ""
             },
             "default_value": "",
+            "acfe_textarea_code": 0,
             "maxlength": "",
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
+        },
+        {
+            "key": "field_667180ab4ee68",
+            "label": "Text",
+            "name": "text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -48,5 +69,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1718687624
+    "modified": 1718714672
 }

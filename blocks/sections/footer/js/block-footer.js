@@ -75,7 +75,7 @@ const init = function () {
 		}
 	});
 
-	document.getElementsByName("form-msg").forEach(form => {
+	document.querySelectorAll(".form").forEach(form => {
 		const fields = form.querySelectorAll('.form__field .form__input, .form__field .form__textarea');
 
 		fields.forEach(field => {

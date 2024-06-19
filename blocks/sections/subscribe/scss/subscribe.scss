@@ -1,0 +1,155 @@
+/* ------------------------------------------------------------ *\
+	Generic
+\* ------------------------------------------------------------ */
+
+@import "../../../../resources/scss/generic/variables";
+@import "../../../../resources/scss/generic/functions";
+@import "../../../../resources/scss/generic/mixins";
+
+/* ------------------------------------------------------------ *\
+	Blocks: Subscribe
+\* ------------------------------------------------------------ */
+
+.subscribe {
+	position: relative;
+	z-index: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 155px;
+		background-color: $accent-300;
+	}
+}
+
+.subscribe__content {
+	position: relative;
+	padding-top: 50px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: $accent-400;
+
+	@include breakpoint-down(small-desktop) {
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		padding-left: 30px;
+	}
+
+	@include breakpoint-down(mobile) {
+		padding-top: 30px;
+		padding-right: 20px;
+		padding-bottom: 30px;
+		padding-left: 20px;
+		flex-direction: column;
+	}
+
+	&>* {
+		flex: 0 0 auto;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50px;
+		bottom: 50px;
+		width: 1px;
+		transform: translateX(-50%);
+		background-color: transparentize($white, .7);
+
+		@include breakpoint-down(small-desktop) {
+			top: 30px;
+			bottom: 30px;
+		}
+
+		@include breakpoint-down(mobile) {
+			content: none;
+		}
+	}
+}
+
+.subscribe__left {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	max-width: 50%;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-top: 0;
+		margin-bottom: 0;
+		max-width: 100%;
+	}
+}
+
+.subscribe__right {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	@include breakpoint-down(small-desktop) {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-top: 30px;
+		margin-bottom: 0;
+		max-width: 100%;
+	}
+}
+
+.subscribe__text {
+	max-width: 490px;
+	margin-left: auto;
+	margin-right: 50px;
+	color: $white;
+	font-size: 22px;
+	line-height: 1.2;
+	font-weight: 900;
+	text-align: right;
+
+	@include breakpoint-down(small-desktop) {
+		margin-right: 30px;
+		max-width: none;
+		font-size: 18px;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-left: 0;
+		margin-right: 0;
+		text-align: start;
+	}
+}
+
+.subscribe__wrap-form {
+	margin-left: 50px;
+	max-width: 698px;
+
+	@include breakpoint-down(small-desktop) {
+		margin-left: 30px;
+		max-width: none;
+	}
+
+	@include breakpoint-down(mobile) {
+		margin-left: 0;
+	}
+}

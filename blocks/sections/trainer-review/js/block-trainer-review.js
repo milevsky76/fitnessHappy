@@ -11,16 +11,14 @@ const init = function () {
 
 	let myCollapse = document.getElementById('collapseExample');
   let toggleButton = document.getElementById('toggleButton');
-	console.log(123);
+
   // Событие перед показом collapse
   myCollapse.addEventListener('show.bs.collapse', function () {
-		console.log(321);
     toggleButton.textContent = 'Show less';
   });
 
   // Событие перед скрытием collapse
   myCollapse.addEventListener('hide.bs.collapse', function () {
-		console.log(331);
     toggleButton.textContent = 'Show more';
   });
 

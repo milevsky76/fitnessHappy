@@ -477,6 +477,7 @@ lottie-player {
 	color: $white;
 	background-color: $accent-400;
 	border: 3px solid $accent-400;
+	border-radius: 2px;
 	line-height: 1;
 	font-weight: 700;
 	text-align: center;
@@ -495,6 +496,17 @@ lottie-player {
 	&:focus-visible {
 		background-color: $accent-300;
 		border-color: $accent-300;
+	}
+
+	&--inverse {
+		color: $accent-400;
+		background-color: $white;
+		border-color: $white;
+
+		&:hover,
+		&:focus-visible {
+			color: $white;
+		}
 	}
 
 	&--transparent {

@@ -92,7 +92,7 @@ $hero_section_buttons = get_field( 'hero_section_buttons_buttons_generator' );
 								?>
 
 								<?php if ('choosen_popup' === $button['button']['options']) : ?>
-									<button class="section-hero__consultation button <?= $button_style ?>" type="button" data-bs-toggle="modal" data-bs-target="#<?= $button['button']['popup_id'] ?>"><?= $button['button']['text'] ?></button>
+									<button class="section-hero__consultation button <?= $button_style ?>" type="button" data-bs-toggle="modal" data-bs-target="#modal-status"><?= $button['button']['text'] ?></button>
 								<?php elseif ('video_popup' === $button['button']['options']) : ?>
 									<button class="button <?= $button_style ?> section-hero__play <?= ('youtube' === $button['button']['video_popup']['video_type']) ? 'js-button-play-youtube' : ''?>" type="button" data-bs-toggle="modal" data-bs-target="#<?= 'youtube' === $button['button']['video_popup']['video_type'] ? 'modal-video-youtube' : 'modal-video-local'?>" data-youtube-id="<?= $button['button']['video_popup']['youtube_link'] ?>">
 										<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" aria-hidden="true"><path d="M17.338 7.692 5.525.411A2.698 2.698 0 0 0 2.761.352c-.876.49-1.399 1.381-1.399 2.385v14.496c0 1.518 1.223 2.759 2.726 2.767H4.1c.47 0 .959-.147 1.416-.426a.78.78 0 1 0-.812-1.332c-.214.13-.423.198-.608.198a1.212 1.212 0 0 1-1.174-1.207V2.737c0-.43.224-.813.6-1.023.376-.21.82-.2 1.185.025L16.52 9.02c.355.219.558.583.557 1 0 .417-.205.78-.562.999l-8.54 5.229a.78.78 0 1 0 .814 1.33l8.54-5.228a2.712 2.712 0 0 0 1.308-2.327 2.712 2.712 0 0 0-1.299-2.33Z"></path></svg>

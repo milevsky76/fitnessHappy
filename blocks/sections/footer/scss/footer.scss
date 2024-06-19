@@ -276,57 +276,57 @@
 }
 
 .form-msg {
-	--column-gap: 10px;
+	// --column-gap: 10px;
 
-	row-gap: 30px;
-	column-gap: calc(var(--column-gap) * 2);
+	// row-gap: 30px;
+	// column-gap: calc(var(--column-gap) * 2);
 	margin-top: 50px;
 
 	@include breakpoint-down(small-desktop) {
 		margin-top: 30px;
-		row-gap: 20px;
+		// row-gap: 20px;
 	}
 
 	@include breakpoint-down(mobile) {
 		margin-top: 25px;
 	}
 
-	>:nth-child(1),
-	>:nth-child(2),
-	>:nth-child(3),
-	>:nth-child(4) {
-		max-width: calc(50% - var(--column-gap));
+	// >:nth-child(1),
+	// >:nth-child(2),
+	// >:nth-child(3),
+	// >:nth-child(4) {
+	// 	max-width: calc(50% - var(--column-gap));
 
-		@include breakpoint-down(mobile) {
-			max-width: 100%;
-		}
-	}
+	// 	@include breakpoint-down(mobile) {
+	// 		max-width: 100%;
+	// 	}
+	// }
 
-	>:last-child {
-		text-align: end;
-	}
+	// >:last-child {
+	// 	text-align: end;
+	// }
 }
 
-.form-subscribe {
-	gap: 10px;
+// .form-subscribe {
+// 	gap: 10px;
 
-	&>:nth-child(1) {
-		flex: 1 1 0%;
+// 	&>:nth-child(1) {
+// 		flex: 1 1 0%;
 
-		@include breakpoint-down(tablet) {
-			flex: 0 0 auto;
-		}
-	}
+// 		@include breakpoint-down(tablet) {
+// 			flex: 0 0 auto;
+// 		}
+// 	}
 
-	&>:last-child {
-		width: auto;
+// 	&>:last-child {
+// 		width: auto;
 
-		@include breakpoint-down(tablet) {
-			width: 100%;
-			text-align: end;
-		}
-	}
-}
+// 		@include breakpoint-down(tablet) {
+// 			width: 100%;
+// 			text-align: end;
+// 		}
+// 	}
+// }
 
 .form__field {
 	position: relative;

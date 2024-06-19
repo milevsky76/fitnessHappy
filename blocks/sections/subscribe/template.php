@@ -31,16 +31,7 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
 
 			<div class="subscribe__right">
 				<div class="subscribe__wrap-form">
-					<form class="form form--inverse form-subscribe" name="form-subscribe" method="post">
-						<div class="form__field">
-							<input class="form__input" id="email" name="email" type="email" autocomplete="email" required="">
-							<label class="form__label" for="email">Enter your email</label>
-						</div>
-
-						<div class="form__field">
-							<button class="form__button button button--inverse" type="submit">Submit</button>
-						</div>
-					</form>
+					<?php echo do_shortcode('[ninja_form id=2]') ?>
 				</div>
 			</div>
 		</div>

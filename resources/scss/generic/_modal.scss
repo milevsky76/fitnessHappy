@@ -317,6 +317,10 @@
 	}
 }
 
+.error .modal-status__bg {
+	background-color: $primary-400;
+}
+
 .modal-status__wrap-svg {
 	position: absolute;
 	top: 50%;
@@ -331,6 +335,22 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
+}
+
+.error .modal-status__wrap-svg {
+	color: $primary-300;
+}
+
+.modal-status__svg-error {
+	display: none;
+}
+
+.error .modal-status__svg-success {
+	display: none;
+}
+
+.error .modal-status__svg-error {
+	display: block;
 }
 
 .modal-status__content {

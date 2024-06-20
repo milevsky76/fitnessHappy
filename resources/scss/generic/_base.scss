@@ -463,6 +463,16 @@ lottie-player {
 	}
 }
 
+.container--post {
+	max-width: 884px;
+}
+
+@include breakpoint-between(mobile, desktop) {
+	.container--post {
+		max-width: 600px;
+	}
+}
+
 .no-scroll {
 	overflow: hidden;
 }

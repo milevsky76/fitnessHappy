@@ -20,12 +20,13 @@ if ( isset( $block['data']['block_preview_images'] ) ) {
  * Block Variables
  */
 $phone_number = get_field('phone_number');
+$sticky = get_field('sticky');
 ?>
 <!-- /wp-content/themes/testproject/resources/images/previews/ -->
 <!-- Link Swiper's CSS -->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
 
-<header class="header">
+<header class="header <?= $sticky ? 'header--sticky' : 'sticky' ?>">
 	<div class="container">
 		<div class="header__content">
 			<div class="header__left">

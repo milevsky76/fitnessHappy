@@ -9,7 +9,7 @@ import {
 const init = function () {
 	const $section = $(this);
 
-	const header = document.querySelector(".header");
+	const header = document.querySelector(".header.header--sticky");
 	const menuButton = document.querySelector(".js-button-menu");
 	const headerDrop = document.querySelector(".header__panel");
 	const body = document.body;
